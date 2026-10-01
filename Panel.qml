@@ -146,12 +146,13 @@ Panel {
 
   // ---- UI -----------------------------------------------------------------
 
-  PopupCard {
+  KeyboardPanel {
     id: popup
     anchorItem: root.anchorItem
     bar: root.bar
     owner: root
     open: root.opened
+    focusTarget: taskField
     contentWidth: popup.fittedContentWidth(Style.space(360))
     contentHeight: popup.fittedContentHeight(contentColumn.implicitHeight)
 

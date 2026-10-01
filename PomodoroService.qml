@@ -190,7 +190,7 @@ Item {
     ]
     stdout: StdioCollector {
       waitForEnd: true
-      onStreamFinished: function(text) {
+      onStreamFinished: {
         var t = text === undefined || text === null ? "" : String(text)
         // Helper prefixes its response with a sentinel line:
         //   "NO_HISTORY"             -> file absent or symlink
@@ -349,7 +349,7 @@ function appendHistory(entry) {
     ]
     stdout: StdioCollector {
       waitForEnd: true
-      onStreamFinished: function(text) {
+      onStreamFinished: {
         var t = text === undefined || text === null ? "" : String(text)
         console.warn("adhd-pomodoro: stateRead raw_len=" + t.length + " hex_first=" + (t.length > 0 ? t.charCodeAt(0).toString(16) : ""))
         // Sentinel on first line:
